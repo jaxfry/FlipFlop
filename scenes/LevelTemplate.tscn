@@ -84,7 +84,9 @@ limit_left = -400
 limit_top = -350
 limit_smoothed = true
 position_smoothing_enabled = true
+position_smoothing_speed = 7.0
 rotation_smoothing_enabled = true
+rotation_smoothing_speed = 3.0
 
 [node name="Blocks" parent="." unique_id=1353732065 instance=ExtResource("5_c0jfk")]
 position = Vector2(-66, 10)

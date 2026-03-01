@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c628uhifxmoga" path="res://scenes/exit_gate.tscn" id="5_15mv3"]
 [ext_resource type="PackedScene" uid="uid://bhkd4wd2sik4y" path="res://scenes/level_2.tscn" id="6_fcfvj"]
 [ext_resource type="PackedScene" uid="uid://ypb3mrmr3qai" path="res://scenes/player.tscn" id="7_pa8r4"]
+[ext_resource type="PackedScene" uid="uid://0awnj5gm4fxi" path="res://scenes/spikes.tscn" id="13_spikes"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e3sih"]
 size = Vector2(67, 20)
@@ -103,4 +104,9 @@ limit_right = 600
 limit_bottom = 400
 limit_smoothed = true
 position_smoothing_enabled = true
+position_smoothing_speed = 7.0
 rotation_smoothing_enabled = true
+rotation_smoothing_speed = 3.0
+
+[node name="Spike" parent="." unique_id=476110519 instance=ExtResource("13_spikes")]
+position = Vector2(-165, -80)

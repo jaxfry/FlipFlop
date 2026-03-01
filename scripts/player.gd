@@ -7,13 +7,18 @@ extends CharacterBody2D
 @onready var carry_pos = $CarryPos
 @onready var pickup_area = $PickupArea
 @onready var sprite = $AnimatedSprite2D
+@onready var camera = $Camera2D
 
 var held_object: RigidBody2D = null
 
 func _ready():
+	add_to_group("player")
 	GameManager.gravity_direction = Vector2(0, 1)
 	GameManager.gravity_power = 980.0
 	rotation = 0
+	# Snap camera to player position on spawn/respawn to avoid the
+	# smooth-from-origin sweep that happens after a scene reload.
+	camera.reset_smoothing()
 
 func _physics_process(delta):
 	var grav_dir = GameManager.gravity_direction
