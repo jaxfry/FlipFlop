@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://26wvdpstdmas" path="res://assets/Assets/blue_L3.png" id="3_vcx5n"]
 [ext_resource type="Texture2D" uid="uid://b5wsdfffadomg" path="res://assets/Assets/blue_L4.png" id="4_56dhn"]
 [ext_resource type="PackedScene" uid="uid://c628uhifxmoga" path="res://scenes/exit_gate.tscn" id="5_ax3dk"]
-[ext_resource type="PackedScene" uid="uid://cy5ky0xvcq21" path="res://scenes/level_2.tscn" id="6_q2dsb"]
 [ext_resource type="PackedScene" uid="uid://ypb3mrmr3qai" path="res://scenes/player.tscn" id="7_p3r0x"]
 [ext_resource type="PackedScene" uid="uid://yejhky353yfu" path="res://scenes/blocks.tscn" id="8_5xqnf"]
 [ext_resource type="PackedScene" uid="uid://0awnj5gm4fxi" path="res://scenes/spikes.tscn" id="9_ha73p"]
@@ -71,7 +70,6 @@ region_rect = Rect2(0, 0, 2000, 2000)
 position = Vector2(430.00003, 138.00002)
 rotation = 1.575127
 scale = Vector2(2, 2)
-next_level = ExtResource("6_q2dsb")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGate" unique_id=299099970]
