@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+@export var gravity_multiplier: float = 1.1
+
 var is_held = false
 
 func _physics_process(delta):
@@ -9,7 +11,7 @@ func _physics_process(delta):
 
 	# If NOT held, apply custom gravity as normal
 	# (Note: We use the damping trick from before)
-	var force = GameManager.gravity_direction * GameManager.gravity_power * mass
+	var force = GameManager.gravity_direction * GameManager.gravity_power * mass * gravity_multiplier
 	apply_central_force(force)
 
 func pick_up():
