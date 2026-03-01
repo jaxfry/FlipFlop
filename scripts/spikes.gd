@@ -7,8 +7,5 @@ func _on_body_entered(body):
 		# OPTIONAL: Play a death sound here if you have one!
 		# $AudioStreamPlayer.play() 
 		
-		# Restart the level instantly
-		call_deferred("restart_level")
-
-func restart_level():
-	get_tree().reload_current_scene()
+		# Restart the level with a transition
+		TransitionScreen.change_scene(get_tree().current_scene.scene_file_path)
