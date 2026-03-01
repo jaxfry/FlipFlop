@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://yejhky353yfu"]
 
+[ext_resource type="Texture2D" uid="uid://c5qj172kbc7vn" path="res://assets/Assets/shat.tile.cornercorner.png" id="1_6nsvg"]
 [ext_resource type="Texture2D" uid="uid://bho8nyakyo45r" path="res://assets/Assets/shat.tile.png" id="1_wv7cx"]
 [ext_resource type="Texture2D" uid="uid://gw1rcq6pbq7" path="res://assets/Assets/shat.tile.inner.png" id="2_giubl"]
 [ext_resource type="Texture2D" uid="uid://cffj8x7fyxir2" path="res://assets/Assets/shat.tile.updownright1.png" id="2_rgft6"]
@@ -12,6 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://cwjhfmn3c34w2" path="res://assets/Assets/shat.tile.leftrightdonwup.png" id="7_nnip7"]
 [ext_resource type="Texture2D" uid="uid://dksfy5x78om0f" path="res://assets/Assets/shat.tile.leftup.png" id="8_6nsvg"]
 [ext_resource type="Texture2D" uid="uid://cw1ha8dyhnog4" path="res://assets/Assets/shat.tile.rightdonwup.png" id="9_x152s"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x152s"]
+texture = ExtResource("1_6nsvg")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_giubl"]
 texture = ExtResource("1_wv7cx")
@@ -101,6 +108,7 @@ sources/11 = SubResource("TileSetAtlasSource_5x58u")
 sources/12 = SubResource("TileSetAtlasSource_mpxed")
 sources/14 = SubResource("TileSetAtlasSource_nnip7")
 sources/15 = SubResource("TileSetAtlasSource_6nsvg")
+sources/0 = SubResource("TileSetAtlasSource_x152s")
 
 [node name="Blocks" type="TileMapLayer" unique_id=1353732065]
 tile_set = SubResource("TileSet_3jd7w")

@@ -77,16 +77,19 @@ tile_map_data = PackedByteArray("AAD0//7/BAAAAAAAAAD1//7/AQAAAAAAAAD2//7/AQAAAAA
 position = Vector2(-41, -87)
 
 [node name="Door" parent="." unique_id=1263043452 instance=ExtResource("3_fcfvj")]
+modulate = Color(0.8392157, 0.16078432, 0.16078432, 1)
 position = Vector2(256, 118)
 
 [node name="FloorButton" parent="." unique_id=832801447 node_paths=PackedStringArray("linked_door") instance=ExtResource("4_pa8r4")]
 position = Vector2(188, 263)
 rotation = 3.1415927
 linked_door = NodePath("../Door")
+wire_waypoints = PackedVector2Array(384, 257, 384, 225, 128, 224, 128, 128)
 
 [node name="ExitGate" parent="." unique_id=133450962 instance=ExtResource("5_15mv3")]
 position = Vector2(271, -311)
 next_level = ExtResource("6_fcfvj")
+delay_seconds = 0.6
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGate" unique_id=299099970]
@@ -110,3 +113,4 @@ rotation_smoothing_speed = 3.0
 
 [node name="Spike" parent="." unique_id=476110519 instance=ExtResource("13_spikes")]
 position = Vector2(-165, -80)
+

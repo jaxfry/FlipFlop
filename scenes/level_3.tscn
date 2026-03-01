@@ -67,9 +67,10 @@ region_enabled = true
 region_rect = Rect2(0, 0, 2000, 2000)
 
 [node name="ExitGate" parent="." unique_id=133450962 instance=ExtResource("5_ax3dk")]
-position = Vector2(430.00003, 138.00002)
+position = Vector2(308, 140.00002)
 rotation = 1.575127
 scale = Vector2(2, 2)
+delay_seconds = 0.3
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGate" unique_id=299099970]

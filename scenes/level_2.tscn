@@ -73,8 +73,9 @@ region_enabled = true
 region_rect = Rect2(0, 0, 2000, 2000)
 
 [node name="ExitGate" parent="." unique_id=133450962 instance=ExtResource("5_76toy")]
-position = Vector2(450, 225)
+position = Vector2(358, 226)
 next_level = ExtResource("6_172wr")
+delay_seconds = 0.3
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGate" unique_id=299099970]
@@ -111,6 +112,7 @@ scale = Vector2(2, 2)
 [node name="FloorButton" parent="." unique_id=832801447 node_paths=PackedStringArray("linked_door") instance=ExtResource("10_g2hoc")]
 position = Vector2(-235, -94)
 linked_door = NodePath("../Door")
+wire_waypoints = PackedVector2Array(-194, -86, -195, -54, -354, -55, -355, 234, 270, 233)
 
 [node name="Spikes2" parent="." unique_id=678866608 instance=ExtResource("11_fldb1")]
 position = Vector2(-50, 58)

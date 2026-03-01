@@ -17,8 +17,20 @@ func start_game():
 
 
 var blink_timer = 0.0
+var parallax_offset = Vector2.ZERO
+const PARALLAX_STRENGTH = 30.0
+const PARALLAX_SMOOTH = 3.0
+
 func _process(delta):
 	blink_timer += delta
 	if blink_timer >= 0.5:
 		$Label.visible = not $Label.visible
 		blink_timer = 0.0
+	
+	# Mouse parallax
+	var viewport_size = get_viewport_rect().size
+	var mouse_pos = get_viewport().get_mouse_position()
+	var center = viewport_size / 2.0
+	var target_offset = (mouse_pos - center) / center * PARALLAX_STRENGTH
+	parallax_offset = parallax_offset.lerp(target_offset, PARALLAX_SMOOTH * delta)
+	$ParallaxBackground.scroll_offset = parallax_offset
