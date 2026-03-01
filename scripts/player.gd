@@ -100,7 +100,12 @@ func drop_object():
 	var box_ref = held_object
 	held_object = null
 
+	# When gravity is inverted (up) or rightward, sprite.flip_h has the opposite
+	# meaning for the throw direction, so we negate facing to compensate.
+	var is_inverted = GameManager.gravity_direction.y < 0 or GameManager.gravity_direction.x > 0
 	var facing = -1.0 if sprite.flip_h else 1.0
+	if is_inverted:
+		facing = -facing
 	var throw_dir = Vector2.ZERO
 	if GameManager.gravity_direction.x == 0:
 		throw_dir.x = facing

@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b5wsdfffadomg" path="res://assets/Assets/blue_L4.png" id="4_2aecg"]
 [ext_resource type="PackedScene" uid="uid://dccttnir0n6ll" path="res://scenes/floor_button.tscn" id="4_pa8r4"]
 [ext_resource type="PackedScene" uid="uid://c628uhifxmoga" path="res://scenes/exit_gate.tscn" id="5_15mv3"]
-[ext_resource type="PackedScene" uid="uid://bhkd4wd2sik4y" path="res://scenes/level_2.tscn" id="6_fcfvj"]
+[ext_resource type="PackedScene" uid="uid://cy5ky0xvcq21" path="res://scenes/level_2.tscn" id="6_fcfvj"]
 [ext_resource type="PackedScene" uid="uid://ypb3mrmr3qai" path="res://scenes/player.tscn" id="7_pa8r4"]
 [ext_resource type="PackedScene" uid="uid://0awnj5gm4fxi" path="res://scenes/spikes.tscn" id="13_spikes"]
 
@@ -81,6 +81,11 @@ position = Vector2(256, 118)
 
 [node name="FloorButton" parent="." unique_id=832801447 node_paths=PackedStringArray("linked_door") instance=ExtResource("4_pa8r4")]
 position = Vector2(188, 263)
+rotation = 3.1415927
+linked_door = NodePath("../Door")
+
+[node name="FloorButton2" parent="." unique_id=17597743 node_paths=PackedStringArray("linked_door") instance=ExtResource("4_pa8r4")]
+position = Vector2(252, 262)
 rotation = 3.1415927
 linked_door = NodePath("../Door")
 
