@@ -1,0 +1,232 @@
+[gd_scene format=3 uid="uid://btr3e7hx2oqx7"]
+
+[ext_resource type="Texture2D" uid="uid://b5wsdfffadomg" path="res://assets/Assets/blue_L4.png" id="1_0lrm4"]
+[ext_resource type="Texture2D" uid="uid://26wvdpstdmas" path="res://assets/Assets/blue_L3.png" id="2_6s1kg"]
+[ext_resource type="Texture2D" uid="uid://b8ttj3nr6wuw5" path="res://assets/Assets/blue_L2.png" id="3_bqn3h"]
+[ext_resource type="Texture2D" uid="uid://bevgdoeu60t4i" path="res://assets/1 - Gum Bot/Idle (32 x 32).png" id="4_qnnn4"]
+[ext_resource type="Texture2D" uid="uid://bp84vjtq4fwtc" path="res://assets/1 - Gum Bot/Walking (32 x 32).png" id="5_doie2"]
+[ext_resource type="Script" uid="uid://dpx1fk873cokd" path="res://scripts/char.gd" id="6_6s1kg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("4_qnnn4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("4_qnnn4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("4_qnnn4")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("4_qnnn4")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("5_doie2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("5_doie2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("5_doie2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
+atlas = ExtResource("5_doie2")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
+atlas = ExtResource("5_doie2")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
+atlas = ExtResource("5_doie2")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r6ob7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrip")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2wvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v2ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jej6c")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_confetti1"]
+offsets = PackedFloat32Array(0, 0.17, 0.33, 0.5, 0.67, 0.83, 1)
+colors = PackedColorArray(1, 0.15, 0.15, 1, 1, 0.55, 0.1, 1, 1, 1, 0.15, 1, 0.15, 0.85, 0.25, 1, 0.15, 0.5, 1, 1, 0.7, 0.15, 1, 1, 1, 0.3, 0.7, 1)
+
+[sub_resource type="Gradient" id="Gradient_confetti2"]
+offsets = PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1)
+colors = PackedColorArray(1, 0.4, 0.7, 1, 0.3, 0.8, 1, 1, 1, 0.85, 0.1, 1, 0.6, 0.2, 1, 1, 0.1, 1, 0.8, 1, 1, 0.6, 0.2, 1)
+
+[node name="WinScreen" type="Control" unique_id=348633371]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=493533809]
+z_index = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0lrm4")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=418972500]
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6s1kg")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1455596804]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bqn3h")
+
+[node name="Label" type="Label" parent="." unique_id=1366060102]
+z_index = 6
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -101.0
+offset_top = -178.0
+offset_right = 93.0
+offset_bottom = -155.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "You won!"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=61848357]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16862746, 0.22745098, 0.37254903, 1)
+
+[node name="char" type="AnimatedSprite2D" parent="." unique_id=1711102963]
+position = Vector2(132, 192)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_r6ob7")
+autoplay = "default"
+script = ExtResource("6_6s1kg")
+
+[node name="ConfettiLeft" type="CPUParticles2D" parent="."]
+z_index = 10
+position = Vector2(80, 340)
+emitting = true
+amount = 60
+lifetime = 3.5
+speed_scale = 1.2
+local_coords = false
+direction = Vector2(-0.3, -1)
+spread = 35.0
+gravity = Vector2(0, 120)
+initial_velocity_min = 180.0
+initial_velocity_max = 320.0
+angular_velocity_min = -400.0
+angular_velocity_max = 400.0
+scale_amount_min = 2.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_confetti1")
+emission_shape = 3
+emission_rect_extents = Vector2(60, 5)
+
+[node name="ConfettiRight" type="CPUParticles2D" parent="."]
+z_index = 10
+position = Vector2(560, 340)
+emitting = true
+amount = 60
+lifetime = 3.5
+speed_scale = 1.2
+local_coords = false
+direction = Vector2(0.3, -1)
+spread = 35.0
+gravity = Vector2(0, 120)
+initial_velocity_min = 180.0
+initial_velocity_max = 320.0
+angular_velocity_min = -400.0
+angular_velocity_max = 400.0
+scale_amount_min = 2.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_confetti2")
+emission_shape = 3
+emission_rect_extents = Vector2(60, 5)
+
+[node name="ConfettiCenter" type="CPUParticles2D" parent="."]
+z_index = 10
+position = Vector2(320, -10)
+emitting = true
+amount = 80
+lifetime = 5.0
+local_coords = false
+direction = Vector2(0, 1)
+spread = 25.0
+gravity = Vector2(0, 80)
+initial_velocity_min = 30.0
+initial_velocity_max = 80.0
+angular_velocity_min = -300.0
+angular_velocity_max = 300.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_confetti1")
+emission_shape = 3
+emission_rect_extents = Vector2(320, 5)
