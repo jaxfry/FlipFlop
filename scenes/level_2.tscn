@@ -6,14 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://b5wsdfffadomg" path="res://assets/Assets/blue_L4.png" id="4_bo4dx"]
 [ext_resource type="PackedScene" uid="uid://c628uhifxmoga" path="res://scenes/exit_gate.tscn" id="5_76toy"]
 [ext_resource type="PackedScene" uid="uid://ypb3mrmr3qai" path="res://scenes/player.tscn" id="6_8g4ke"]
+[ext_resource type="PackedScene" uid="uid://b1u1n5v34kjts" path="res://scenes/level_3.tscn" id="6_172wr"]
 [ext_resource type="PackedScene" uid="uid://yejhky353yfu" path="res://scenes/blocks.tscn" id="7_56gwk"]
 [ext_resource type="PackedScene" uid="uid://c6lseko5ouvox" path="res://scenes/box.tscn" id="8_hey2k"]
 [ext_resource type="PackedScene" uid="uid://b8cb7kmwb8m41" path="res://scenes/door.tscn" id="9_172wr"]
 [ext_resource type="PackedScene" uid="uid://dccttnir0n6ll" path="res://scenes/floor_button.tscn" id="10_g2hoc"]
 [ext_resource type="PackedScene" uid="uid://0awnj5gm4fxi" path="res://scenes/spikes.tscn" id="11_fldb1"]
-
-[sub_resource type="Resource" id="Resource_ve5ok"]
-metadata/__load_path__ = "res://scenes/level_2.tscn"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e3sih"]
 size = Vector2(67, 128)
@@ -76,7 +74,7 @@ region_rect = Rect2(0, 0, 2000, 2000)
 
 [node name="ExitGate" parent="." unique_id=133450962 instance=ExtResource("5_76toy")]
 position = Vector2(450, 225)
-next_level = SubResource("Resource_ve5ok")
+next_level = ExtResource("6_172wr")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGate" unique_id=299099970]
