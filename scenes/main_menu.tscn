@@ -2,6 +2,12 @@
 
 [ext_resource type="Script" uid="uid://boi5kydsmn1bf" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://bq1sxyyba345f" path="res://assets/Assets/TITILE.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://32ygqwxe72b4" path="res://assets/Assets/blue_L1.png" id="3_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://b8ttj3nr6wuw5" path="res://assets/Assets/blue_L2.png" id="4_oa1go"]
+[ext_resource type="Texture2D" uid="uid://26wvdpstdmas" path="res://assets/Assets/blue_L3.png" id="5_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://b5wsdfffadomg" path="res://assets/Assets/blue_L4.png" id="6_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://bevgdoeu60t4i" path="res://assets/1 - Gum Bot/Idle (32 x 32).png" id="7_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://bp84vjtq4fwtc" path="res://assets/1 - Gum Bot/Walking (32 x 32).png" id="8_5dd4i"]
 
 [sub_resource type="Animation" id="Animation_ekxnf"]
 resource_name = "Flash"
@@ -27,6 +33,89 @@ _data = {
 &"Flash": SubResource("Animation_ekxnf"),
 &"RESET": SubResource("Animation_bqqt6")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("7_jk1qb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("7_jk1qb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("7_jk1qb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("7_jk1qb")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("8_5dd4i")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("8_5dd4i")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("8_5dd4i")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
+atlas = ExtResource("8_5dd4i")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
+atlas = ExtResource("8_5dd4i")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
+atlas = ExtResource("8_5dd4i")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_flqon"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrip")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2wvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v2ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jej6c")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
 
 [node name="MainMenu" type="Control" unique_id=261782441]
 layout_mode = 3
@@ -75,11 +164,61 @@ text = "PRESS ANY KEY TO START"
 libraries/ = SubResource("AnimationLibrary_wu84c")
 autoplay = &"Flash"
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1508948466]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.16862746, 0.22745098, 0.37254903, 1)
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1967895803]
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1294600914]
+position = Vector2(-543, -294)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(640, 250)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1351238236]
+texture_repeat = 2
+texture = ExtResource("3_rtw2f")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 2000)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=565684741]
+position = Vector2(-503, -259)
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(640, 250)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=145035140]
+texture_repeat = 2
+texture = ExtResource("4_oa1go")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 2000)
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=37181200]
+position = Vector2(-494, -264)
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(640, 250)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3" unique_id=262428757]
+texture_repeat = 2
+texture = ExtResource("5_tbmy8")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 2000)
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground" unique_id=940244067]
+position = Vector2(-552, -254)
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(640, 250)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4" unique_id=339027598]
+texture_repeat = 2
+texture = ExtResource("6_jk1qb")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 2000)
+
+[node name="char" type="AnimatedSprite2D" parent="." unique_id=1354811594]
+position = Vector2(583, 45)
+rotation = 3.1415927
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_flqon")
+autoplay = "default"

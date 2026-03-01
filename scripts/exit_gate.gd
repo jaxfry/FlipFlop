@@ -19,7 +19,7 @@ func _on_body_entered(body: Node2D) -> void:
 		if next_level:
 			change_level()
 		else:
-			print("You win! (No next level!)")
+			TransitionScreen.change_scene("res://scenes/win_screen.tscn")
 
 func change_level():
 	TransitionScreen.change_scene(next_level.resource_path)
