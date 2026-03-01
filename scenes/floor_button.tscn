@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dccttnir0n6ll"]
+
+[ext_resource type="Script" uid="uid://dhqhfixrhkhbk" path="res://scripts/floor_button.gd" id="1_ojpvo"]
+[ext_resource type="Texture2D" uid="uid://c41ccy7107xhb" path="res://assets/Assets/Button-Pushed.png" id="2_2y242"]
+[ext_resource type="Texture2D" uid="uid://dlucb2rawsrpi" path="res://assets/Assets/Button-Up.png" id="3_xqbbt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2y242"]
+size = Vector2(58, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4s4ev"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xqbbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2y242")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="FloorButton" type="Area2D" unique_id=832801447]
+collision_mask = 7
+script = ExtResource("1_ojpvo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=539512167]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_2y242")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1572933555]
+position = Vector2(0, -9)
+sprite_frames = SubResource("SpriteFrames_4s4ev")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
