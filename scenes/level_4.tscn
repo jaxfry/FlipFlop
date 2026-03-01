@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c6lseko5ouvox" path="res://scenes/box.tscn" id="10_rr1tt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e3sih"]
-size = Vector2(67, 20)
+size = Vector2(0.24748036, 10.772697)
 
 [node name="LevelTemplate" type="Node2D" unique_id=169357493]
 
@@ -76,7 +76,7 @@ next_level = ExtResource("6_py6g0")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGate" unique_id=299099970]
-position = Vector2(-11.5, 0)
+position = Vector2(-0.026175827, 10.174194)
 shape = SubResource("RectangleShape2D_e3sih")
 
 [node name="Player" parent="." unique_id=493691387 instance=ExtResource("7_g31h8")]
@@ -86,8 +86,8 @@ position = Vector2(-376, -196)
 position = Vector2(-5, -38)
 limit_left = -421
 limit_top = -393
-limit_right = 9999979
-limit_bottom = 9999957
+limit_right = 900
+limit_bottom = 75
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
