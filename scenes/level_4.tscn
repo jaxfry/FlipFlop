@@ -230,7 +230,7 @@ rotation = 6.2831855
 
 [node name="Spikes37" parent="Spikes" unique_id=85907662 instance=ExtResource("9_cp0rv")]
 position = Vector2(66, 6)
-rotation = 6.2831855
+rotation = 4.712389
 
 [node name="Spikes38" parent="Spikes" unique_id=1395243667 instance=ExtResource("9_cp0rv")]
 position = Vector2(-30, -218)
