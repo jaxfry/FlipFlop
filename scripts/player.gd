@@ -56,8 +56,9 @@ func _physics_process(delta):
 		else:
 			velocity.x = move_toward(velocity.x, 0.0, move_speed)
 	else:
+		var wall_input = -input if grav_dir.x > 0 else input
 		if input:
-			velocity.y = input * move_speed
+			velocity.y = wall_input * move_speed
 		else:
 			velocity.y = move_toward(velocity.y, 0.0, move_speed)
 
