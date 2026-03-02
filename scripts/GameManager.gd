@@ -7,6 +7,7 @@ func change_gravity(new_dir: Vector2):
 	# Only change if it's actually a different direction
 	if gravity_direction != new_dir:
 		gravity_direction = new_dir
+		CameraShake.add_trauma(0.6)
 
 # ==============================================================
 # ⚠️  DEV KEYBINDS — REMOVE BEFORE SHIPPING ⚠️

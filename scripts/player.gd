@@ -10,6 +10,13 @@ extends CharacterBody2D
 @onready var camera = $Camera2D
 
 var held_object: RigidBody2D = null
+var _was_on_floor := true
+var _fall_speed := 0.0
+
+## Minimum fall speed (px/s along gravity axis) required to trigger a landing shake.
+const LAND_SHAKE_MIN_SPEED := 200.0
+## Fall speed that produces maximum landing shake.
+const LAND_SHAKE_MAX_SPEED := 500.0
 
 func _ready():
 	add_to_group("player")
@@ -67,7 +74,23 @@ func _physics_process(delta):
 	else:
 		sprite.play("default")
 
+	# --- Landing detection (before move_and_slide changes is_on_floor) ---
+	var on_floor_now = is_on_floor()
+
+	# Track how fast we're falling along the gravity axis
+	var grav_speed = velocity.dot(grav_dir)
+	if not on_floor_now:
+		_fall_speed = max(_fall_speed, grav_speed)
+
 	move_and_slide()
+
+	# Detect the frame we land
+	if is_on_floor() and not _was_on_floor:
+		if _fall_speed >= LAND_SHAKE_MIN_SPEED:
+			var t = clamp((_fall_speed - LAND_SHAKE_MIN_SPEED) / (LAND_SHAKE_MAX_SPEED - LAND_SHAKE_MIN_SPEED), 0.0, 1.0)
+			CameraShake.add_trauma(lerp(0.2, 0.5, t))
+		_fall_speed = 0.0
+	_was_on_floor = is_on_floor()
 
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)

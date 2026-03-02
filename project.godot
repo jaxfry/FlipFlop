@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameManager="*uid://ca2wubhy7edpp"
 TransitionScreen="*uid://bnqjtwqm1avg5"
+CameraShake="*res://scripts/camera_shake.gd"
 
 [display]
 

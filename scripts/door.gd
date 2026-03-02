@@ -38,6 +38,7 @@ func _open():
 	
 	is_open = true
 	animated_sprite.play("default")
+	CameraShake.add_trauma(0.45)
 	
 	# Switch to layer 2 only.
 	# Player mask = layers 1 & 3 → does NOT scan layer 2 → passes through.
