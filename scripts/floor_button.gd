@@ -1,6 +1,6 @@
 extends Area2D
 
-# Just assign the door in the editor — the wire draws itself!
+# Assign the door in the editor — the wire draws itself.
 @export var linked_door : StaticBody2D
 ## Optional: extra waypoints between button and door (in local level coords).
 ## Leave empty for a direct straight line.

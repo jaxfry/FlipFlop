@@ -23,8 +23,7 @@ func _ready():
 	GameManager.gravity_direction = Vector2(0, 1)
 	GameManager.gravity_power = 980.0
 	rotation = 0
-	# Snap camera to player position on spawn/respawn to avoid the
-	# smooth-from-origin sweep that happens after a scene reload.
+	# Snap camera on spawn/respawn to avoid smooth-from-origin sweep.
 	camera.reset_smoothing()
 
 func _physics_process(delta):

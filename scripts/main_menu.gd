@@ -1,7 +1,6 @@
 extends Control
 
 func _input(event):
-	# Check if ANY key is pressed or ANY mouse button clicked
 	if event is InputEventKey and event.pressed:
 		start_game()
 	elif event is InputEventMouseButton and event.pressed:
