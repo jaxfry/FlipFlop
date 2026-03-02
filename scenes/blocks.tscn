@@ -15,7 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://dksfy5x78om0f" path="res://assets/Assets/shat.tile.leftup.png" id="8_6nsvg"]
 [ext_resource type="Texture2D" uid="uid://b25ydmi4drrwy" path="res://assets/Assets/Crystal.Blue.png" id="9_w60hs"]
 [ext_resource type="Texture2D" uid="uid://cw1ha8dyhnog4" path="res://assets/Assets/shat.tile.rightdonwup.png" id="9_x152s"]
+[ext_resource type="Texture2D" uid="uid://d1kxm6bgkancx" path="res://assets/Assets/Crystal.Green.png" id="9_yfapm"]
 [ext_resource type="Texture2D" uid="uid://bjxtutberhx7x" path="res://assets/Assets/Crystal.Blue.Small.png" id="10_ic3an"]
+[ext_resource type="Texture2D" uid="uid://cbk50nsoiaqx4" path="res://assets/Assets/Crystal.Green.Small.png" id="10_m64mq"]
+[ext_resource type="Texture2D" uid="uid://82y4ih48ewj" path="res://assets/Assets/Crystal.Red.png" id="11_03jfd"]
+[ext_resource type="Texture2D" uid="uid://vpbtnvbdebsx" path="res://assets/Assets/Crystal.Red.Small.png" id="12_wrnuw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x152s"]
 texture = ExtResource("1_6nsvg")
@@ -64,6 +68,26 @@ texture = ExtResource("6_nnip7")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gl5s0"]
+texture = ExtResource("9_yfapm")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s5mrl"]
+texture = ExtResource("10_m64mq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fcfn4"]
+texture = ExtResource("11_03jfd")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cny3s"]
+texture = ExtResource("12_wrnuw")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_03jfd"]
 texture = ExtResource("9_w60hs")
@@ -130,6 +154,10 @@ sources/0 = SubResource("TileSetAtlasSource_x152s")
 sources/2 = SubResource("TileSetAtlasSource_03jfd")
 sources/3 = SubResource("TileSetAtlasSource_wrnuw")
 sources/13 = SubResource("TileSetAtlasSource_m64mq")
+sources/16 = SubResource("TileSetAtlasSource_gl5s0")
+sources/17 = SubResource("TileSetAtlasSource_s5mrl")
+sources/18 = SubResource("TileSetAtlasSource_fcfn4")
+sources/19 = SubResource("TileSetAtlasSource_cny3s")
 
 [node name="Blocks" type="TileMapLayer" unique_id=1353732065]
 tile_set = SubResource("TileSet_3jd7w")

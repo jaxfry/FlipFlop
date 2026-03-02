@@ -40,19 +40,25 @@ func _create_wire():
 	# Add to the level root so coords are in world space
 	get_parent().add_child.call_deferred(_wire)
 
-## Compute how far along a direction we must go to exit a node's collision box
+## Compute how far along a direction we must go to exit a node's collision box.
+## Accounts for the node's rotation and scale so rotated / scaled doors trim correctly.
 func _get_edge_distance(node: Node2D, direction: Vector2) -> float:
 	var cs = node.get_node_or_null("CollisionShape2D")
 	if cs == null or not (cs.shape is RectangleShape2D):
 		return 16.0
-	var half_size = cs.shape.size * Vector2(abs(cs.scale.x), abs(cs.scale.y)) / 2.0
-	var dir_n = direction.normalized()
+	# Half-extents in the node's local space (collision-shape scale only)
+	var half = cs.shape.size * Vector2(abs(cs.scale.x), abs(cs.scale.y)) / 2.0
+	# Rotate the world-space direction into the node's local space
+	var dir_local = direction.rotated(-node.global_rotation).normalized()
 	var t = INF
-	if abs(dir_n.x) > 0.001:
-		t = min(t, half_size.x / abs(dir_n.x))
-	if abs(dir_n.y) > 0.001:
-		t = min(t, half_size.y / abs(dir_n.y))
-	return t + 2.0
+	if abs(dir_local.x) > 0.001:
+		t = min(t, half.x / abs(dir_local.x))
+	if abs(dir_local.y) > 0.001:
+		t = min(t, half.y / abs(dir_local.y))
+	# Convert the local-space edge point back to world-space distance
+	var local_edge = dir_local * t
+	var world_dist = (local_edge * node.global_scale).length()
+	return world_dist + 2.0
 
 func _on_body_entered(body):
 	if body is CharacterBody2D or body is RigidBody2D:
