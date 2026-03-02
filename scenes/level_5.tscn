@@ -1,0 +1,120 @@
+[gd_scene format=4 uid="uid://d2w6i1sfgqlfw"]
+
+[ext_resource type="Texture2D" uid="uid://32ygqwxe72b4" path="res://assets/Assets/blue_L1.png" id="1_ij176"]
+[ext_resource type="Texture2D" uid="uid://b8ttj3nr6wuw5" path="res://assets/Assets/blue_L2.png" id="2_uva14"]
+[ext_resource type="Texture2D" uid="uid://26wvdpstdmas" path="res://assets/Assets/blue_L3.png" id="3_vqwqk"]
+[ext_resource type="Texture2D" uid="uid://b5wsdfffadomg" path="res://assets/Assets/blue_L4.png" id="4_1q3ip"]
+[ext_resource type="PackedScene" uid="uid://c628uhifxmoga" path="res://scenes/exit_gate.tscn" id="5_e4ab4"]
+[ext_resource type="PackedScene" uid="uid://cy5ky0xvcq21" path="res://scenes/level_2.tscn" id="6_xxvx7"]
+[ext_resource type="PackedScene" uid="uid://ypb3mrmr3qai" path="res://scenes/player.tscn" id="7_68hud"]
+[ext_resource type="PackedScene" uid="uid://yejhky353yfu" path="res://scenes/blocks.tscn" id="8_jwrea"]
+[ext_resource type="PackedScene" uid="uid://0awnj5gm4fxi" path="res://scenes/spikes.tscn" id="8_vqwqk"]
+[ext_resource type="PackedScene" uid="uid://c6lseko5ouvox" path="res://scenes/box.tscn" id="9_uva14"]
+[ext_resource type="PackedScene" uid="uid://dccttnir0n6ll" path="res://scenes/floor_button.tscn" id="11_1q3ip"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3sih"]
+size = Vector2(67, 20)
+
+[node name="level_5" type="Node2D" unique_id=169357493]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1671578514]
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=56231218]
+position = Vector2(-543, -294)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(640, 250)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1023923954]
+texture_repeat = 2
+texture = ExtResource("1_ij176")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 2000)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1190951047]
+position = Vector2(-503, -259)
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(640, 250)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=1386432320]
+texture_repeat = 2
+texture = ExtResource("2_uva14")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 2000)
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1230526012]
+position = Vector2(-494, -264)
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(640, 250)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3" unique_id=286667512]
+texture_repeat = 2
+texture = ExtResource("3_vqwqk")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 2000)
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1493376395]
+position = Vector2(-552, -254)
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(640, 250)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4" unique_id=174538024]
+texture_repeat = 2
+texture = ExtResource("4_1q3ip")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 2000)
+
+[node name="ExitGate" parent="." unique_id=133450962 instance=ExtResource("5_e4ab4")]
+position = Vector2(271, -311)
+next_level = ExtResource("6_xxvx7")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGate" unique_id=299099970]
+position = Vector2(-11.5, 0)
+shape = SubResource("RectangleShape2D_e3sih")
+
+[node name="Player" parent="." unique_id=493691387 instance=ExtResource("7_68hud")]
+position = Vector2(-132, -33)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=625157351]
+position = Vector2(0, -2)
+zoom = Vector2(0.5, 0.5)
+limit_left = -150
+limit_top = -350
+limit_right = 1100
+limit_bottom = 550
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 3.0
+
+[node name="Blocks" parent="." unique_id=1353732065 instance=ExtResource("8_jwrea")]
+position = Vector2(-66, 10)
+tile_map_data = PackedByteArray("AAACAPv/AQAAAAAAAFACAP//AQAAAAAAAFACAAAAAQAAAAAAAFACAAEAAQAAAAAAAFACAAIAAQAAAAAAAFACAAMAAQAAAAAAAFACAAQAAQAAAAAAAFACAAUAAQAAAAAAAFACAAYAAQAAAAAAAFACAAcAAQAAAAAAAFACAAgAAQAAAAAAAFACAAkAAQAAAAAAAFACAAoAAQAAAAAAAFACAAsAAQAAAAAAAFACAAwAAQAAAAAAAFACAA0AAQAAAAAAAFACAA4AAQAAAAAAAFACAA8AAQAAAAAAAFADAA8AAQAAAAAAAAAEAA8AAQAAAAAAAAAFAA8AAQAAAAAAAAAGAA8AAQAAAAAAAAAHAA8AAQAAAAAAAAAIAA8AAQAAAAAAAAAJAA8AAQAAAAAAAAAKAA8AAQAAAAAAAAALAA8AAQAAAAAAAAAMAA8AAQAAAAAAAAANAA8AAQAAAAAAAAAOAA8AAQAAAAAAAAAPAA8AAQAAAAAAAAAQAA8AAQAAAAAAAAARAA8AAQAAAAAAAAASAA8AAQAAAAAAAAATAA8AAQAAAAAAAAAUAA8AAQAAAAAAAAAVAA8AAQAAAAAAAAAWAA8AAQAAAAAAAAAXAA8AAQAAAAAAAAAYAA8AAQAAAAAAAAAZAA8AAQAAAAAAAAAaAA8AAQAAAAAAAAAbAA8AAQAAAAAAAAADAPv/AQAAAAAAADAEAPv/AQAAAAAAADAFAPv/AQAAAAAAADAGAPv/AQAAAAAAADAHAPv/AQAAAAAAADAIAPv/AQAAAAAAADAJAPv/AQAAAAAAADAKAPv/AQAAAAAAADALAPv/AQAAAAAAADAMAPv/AQAAAAAAADANAPv/AQAAAAAAADAOAPv/AQAAAAAAADAPAPv/AQAAAAAAADAQAPv/AQAAAAAAADARAPv/AQAAAAAAADASAPv/AQAAAAAAADATAPv/AQAAAAAAADAUAPv/AQAAAAAAADAVAPv/AQAAAAAAADAWAPv/AQAAAAAAADAXAPv/AQAAAAAAADAYAPv/AQAAAAAAADAZAPv/AQAAAAAAADAaAPv/AQAAAAAAADAbAPv/AQAAAAAAADAcAPv/AQAAAAAAADAdAPv/AQAAAAAAADAeAPv/AQAAAAAAADAfAPv/AQAAAAAAADABAP//AQAAAAAAAAAAAP//AQAAAAAAAAD/////AQAAAAAAAAD+////AQAAAAAAAAD9////AQAAAAAAAAD8////AQAAAAAAAAAHAP//BgAAAAAAAAAHAAAABgAAAAAAAAAHAAEABgAAAAAAAAAHAAIABgAAAAAAAAAHAAMABgAAAAAAAAAHAAQABgAAAAAAAAAHAAUABgAAAAAAAAAHAAYABgAAAAAAAAAHAAcABgAAAAAAAAAHAAgABgAAAAAAAAAHAAkABgAAAAAAAAAHAAoABgAAAAAAAAAIAAoABgAAAAAAAGAJAAoABgAAAAAAAGAKAAoABgAAAAAAAGALAAoABgAAAAAAAGAMAAoABgAAAAAAAGANAAoABgAAAAAAAGAOAAoABgAAAAAAAGAPAAoABgAAAAAAAGAQAAoABgAAAAAAAGARAAoABgAAAAAAAGASAAoABgAAAAAAAGATAAoABgAAAAAAAGAUAAoABgAAAAAAAGAVAAoABgAAAAAAAGAWAAoABgAAAAAAAGAXAAoABgAAAAAAAGAYAAoABgAAAAAAAGAZAAoABgAAAAAAAGAaAAoABgAAAAAAAGAbAAoABgAAAAAAAGAHAP7/BgAAAAAAADAHAP3/BgAAAAAAADAHAPz/BgAAAAAAADAKAPz/BgAAAAAAADAKAP3/BgAAAAAAADAKAP7/BgAAAAAAADAKAP//BgAAAAAAADAKAAAABgAAAAAAADAKAAEABgAAAAAAADAKAAIABgAAAAAAADAKAAMABgAAAAAAADAKAAQABgAAAAAAADAKAAUABgAAAAAAADAKAAYABgAAAAAAADAKAAcABgAAAAAAADALAAcABgAAAAAAAGAMAAcABgAAAAAAAGANAAcABgAAAAAAAGAOAAcABgAAAAAAAGANAP7/BgAAAAAAAAANAP//BgAAAAAAAAANAAAABgAAAAAAAAANAAEABgAAAAAAAAANAAIABgAAAAAAAAANAAMABgAAAAAAAAANAAQABgAAAAAAAAAOAAQABgAAAAAAAFARAAcABgAAAAAAADARAAYABgAAAAAAADARAAUABgAAAAAAADARAAQABgAAAAAAADARAAMABgAAAAAAADARAAIABgAAAAAAADARAAEABgAAAAAAADAOAP7/BgAAAAAAAGAPAP7/BgAAAAAAAGAQAP7/BgAAAAAAAGARAP7/BgAAAAAAAGASAP7/BgAAAAAAAGATAP7/BgAAAAAAAGARAAgABgAAAAAAAAARAAkABgAAAAAAAAAUAP//BgAAAAAAAAAUAAAABgAAAAAAAAAUAAEABgAAAAAAAAAUAAIABgAAAAAAAAAUAAMABgAAAAAAAAAUAAQABgAAAAAAAAAUAP7/BgAAAAAAAAAVAAcABgAAAAAAAFAWAAcABgAAAAAAAFAXAAcABgAAAAAAAFAYAAcABgAAAAAAAFAZAAcABgAAAAAAAFAXAP7/BgAAAAAAADAXAP//BgAAAAAAADAXAAAABgAAAAAAADAXAAEABgAAAAAAADAXAAIABgAAAAAAADAXAAMABgAAAAAAADAXAAQABgAAAAAAADAVAAQABgAAAAAAAFAWAAQABgAAAAAAAFAaAAYABgAAAAAAAAAaAAUABgAAAAAAAAAaAAQABgAAAAAAAAAaAAMABgAAAAAAAAAaAAIABgAAAAAAAAAaAAEABgAAAAAAAAAaAAAABgAAAAAAAAAaAP//BgAAAAAAAAAaAP7/BgAAAAAAAAAaAAcABgAAAAAAAAAbAAcABgAAAAAAAFAcAAcABgAAAAAAAFAdAAcABgAAAAAAAAAdAAYABgAAAAAAAAAdAAUABgAAAAAAAAAdAAQABgAAAAAAAAAdAAMABgAAAAAAAAAdAAIABgAAAAAAAAAdAAEABgAAAAAAAAAdAAAABgAAAAAAAAAdAP//BgAAAAAAAAAdAP7/BgAAAAAAAAAdAP3/BgAAAAAAAAAdAPz/BgAAAAAAAAAcAAoABgAAAAAAAFAdAAoABgAAAAAAAFAeAAoABgAAAAAAAFAfAAoABgAAAAAAAFAgAAoABgAAAAAAAFAgAAkABgAAAAAAAAAgAAgABgAAAAAAAAAgAAcABgAAAAAAAAAgAAYABgAAAAAAAAAgAAUABgAAAAAAAAAgAAQABgAAAAAAAAAgAAMABgAAAAAAAAAgAAIABgAAAAAAAAAgAAEABgAAAAAAAAAgAAAABgAAAAAAAAAgAP//BgAAAAAAAAAgAP7/BgAAAAAAAAAgAPv/BgAAAAAAAFAcAA8ABgAAAAAAAGAdAA8ABgAAAAAAAGAeAA8ABgAAAAAAAGAfAA8ABgAAAAAAAGAgAA8ABgAAAAAAAGAgAAsABgAAAAAAADAgAAwABgAAAAAAADAgAA0ABgAAAAAAADAgAA4ABgAAAAAAADA=")
+
+[node name="Box" parent="." unique_id=1976543086 instance=ExtResource("9_uva14")]
+position = Vector2(219, -90)
+
+[node name="Spikes" parent="." unique_id=162920119 instance=ExtResource("8_vqwqk")]
+position = Vector2(321, 475)
+
+[node name="Spikes3" parent="." unique_id=1183385896 instance=ExtResource("8_vqwqk")]
+position = Vector2(510, 377)
+rotation = 3.1415927
+
+[node name="Spikes4" parent="." unique_id=1016703712 instance=ExtResource("8_vqwqk")]
+position = Vector2(142, -102)
+rotation = 3.1415927
+
+[node name="Spikes2" parent="." unique_id=1498165423 instance=ExtResource("8_vqwqk")]
+position = Vector2(696, 474)
+
+[node name="FloorButton" parent="." unique_id=832801447 instance=ExtResource("11_1q3ip")]
+position = Vector2(952, -86)
+rotation = -1.5707964
